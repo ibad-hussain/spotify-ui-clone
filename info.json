@@ -1,0 +1,32 @@
+[
+    {
+        "title": "Motivational Nasheeds",
+        "desc": "Uplifting tunes to spark your spirit.",
+        "cover": "/images/cover-images/motivational.png"
+    },
+    {
+        "title": "Peaceful Nasheeds",
+        "desc": "Soft melodies for a calm heart.",
+        "cover": "/images/cover-images/peaceful.png"
+    },
+    {
+        "title": "Spiritual Nasheeds",
+        "desc": "Connect deeply through soulful lyrics.",
+        "cover": "/images/cover-images/spiritual.png"
+    },
+    {
+        "title": "Inspirational Nasheeds",
+        "desc": "Feel inspired by words of light.",
+        "cover": "/images/cover-images/inspirational.png"
+    },
+    {
+        "title": "Forgiveness Nasheeds",
+        "desc": "Reflect and seek mercy through rhythm.",
+        "cover": "/images/cover-images/forgiveness.png"
+    },
+    {
+        "title": "Unity Nasheeds",
+        "desc": "Bringing hearts together through harmony.",
+        "cover": "/images/cover-images/unity.png"
+    }
+]
