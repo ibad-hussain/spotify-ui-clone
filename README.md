@@ -45,7 +45,7 @@ This project helped in practicing:
 ## 🚀 Deployment
 The app is deployed on <b>Netlify</b> and can be accessed via:
 <br>
-https://neftlix-replica.netlify.app/
+https://spotify-ui-replica.netlify.app/
 
 <br>
 

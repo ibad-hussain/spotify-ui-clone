@@ -7,6 +7,12 @@
     font-family: "Radio Canada Big", sans-serif;
 }
 
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+    background-color: #121212;
+}
+
 .container {
     display: flex;
     gap: 5px;
@@ -358,6 +364,10 @@
         width: 350px;
         padding: 10px;
         background-color: #1a1a1a;
+        bottom: 0;
+        top: 0;
+        height: 100vh;
+        overflow-y: auto;
     }
 
     .close {
@@ -372,6 +382,10 @@
         min-height: 100vh;
         margin: 0;
         border-radius: 0;
+    }
+
+    .library, .right {
+        margin-bottom: 0 !important;
     }
 
     .nav {

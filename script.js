@@ -19,25 +19,37 @@ function secondsToMinutesSeconds(seconds) {
 }
 
 
-// Fetches all .mp3 song filenames from a given folder
+// ------------------------
+// // Fetches all .mp3 song filenames from a given folder [localhost version]
+// async function getSongs(folder) {
+//     let a = await fetch(`/songs-folder/${folder}/`);
+//     let response = await a.text();
+
+//     let div = document.createElement("div");
+//     div.innerHTML = response;
+//     let as = div.getElementsByTagName("a");
+//     songs = [];
+
+//     // Filter and extract MP3 file names
+//     for (let i = 0; i < as.length; i++) {
+//         const element = as[i];
+//         if(element.href.endsWith(".mp3")) {
+//             let mp3ONE = element.href.split(`/songs-folder/${folder}/`)[1];
+//             let mp3TWO = mp3ONE.split(".mp3")[0];
+//             songs.push(mp3TWO.replaceAll("%20", " "));
+//         }
+//     }
+//     return songs;
+// }
+// ------------------------
+
+
+// Fetches all .mp3 song filenames from songs.json [deployed version]
 async function getSongs(folder) {
-    let a = await fetch(`/songs-folder/${folder}/`); //
-    let response = await a.text();
-
-    let div = document.createElement("div");
-    div.innerHTML = response;
-    let as = div.getElementsByTagName("a");
-    songs = [];
-
-    // Filter and extract MP3 file names
-    for (let i = 0; i < as.length; i++) {
-        const element = as[i];
-        if(element.href.endsWith(".mp3")) {
-            let mp3ONE = element.href.split(`/songs-folder/${folder}/`)[1]; //
-            let mp3TWO = mp3ONE.split(".mp3")[0];
-            songs.push(mp3TWO.replaceAll("%20", " "));
-        }
-    }
+    let res = await fetch("/songs.json");
+    let data = await res.json();
+    songs = data[folder] || [];
+    console.log(songs)
     return songs;
 }
 
@@ -95,7 +107,14 @@ async function displayAlbums() {
 
 // Handles actual song playing logic
 function playMusic(folder, track, pause=false) {
-    currentSong.src = `/songs-folder/${folder}/` + track + ".mp3"; //
+
+    // ------------------------
+    // // [localhost version]
+    // currentSong.src = `/songs-folder/${folder}/` + track + ".mp3";
+    // ------------------------
+
+    // [deployed version]
+    currentSong.src = `/songs-folder/${folder}/` + encodeURIComponent(track) + ".mp3";
 
     if(!pause) {
         currentSong.play();
