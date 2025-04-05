@@ -6,6 +6,7 @@ A sleek, responsive **Spotify-inspired web music player** built with HTML, CSS, 
 
 ## 🚀 Screenshots
 ![Project screenshot](./Project_screenshots/Image1.png)
+<br>
 ![Project screenshot](./Project_screenshots/Image2.png)
 
 <br>
